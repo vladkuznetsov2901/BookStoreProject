@@ -48,19 +48,23 @@ class AuthFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        lifecycleScope.launch {
+            viewModel.createNewUser("admin", "admin123")
+            viewModel.createNewUser("test_user", "test123")
+        }
+
         binding.signInButton.setOnClickListener {
             if (binding.editTextLogin.text.isNullOrEmpty() || binding.editTextPassword.text.isNullOrEmpty()) {
                 Toast.makeText(requireContext(), "Заполните все поля!", Toast.LENGTH_SHORT).show()
             } else {
 
                 lifecycleScope.launch {
+                    viewModel.authUser(
+                        binding.editTextLogin.text.toString(),
+                        binding.editTextPassword.text.toString()
+                    )
                     viewModel.isUserAuth.collect {
                         if (it) findNavController().navigate(R.id.action_authFragment_to_homeFragment)
-                        else Toast.makeText(
-                            requireContext(),
-                            "Неверный логин или пароль!",
-                            Toast.LENGTH_SHORT
-                        ).show()
 
                     }
                 }

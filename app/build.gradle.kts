@@ -74,7 +74,8 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     kapt(libs.androidx.room.compiler)
     debugImplementation ("androidx.room:room-runtime:2.6.1")
-
+    implementation("com.google.code.gson:gson:2.10")
+    implementation("com.squareup.retrofit2:converter-gson:2.3.0")
 
 
     //navigation
