@@ -7,12 +7,11 @@
     android:background="?android:attr/colorBackground"
     tools:context=".presentation.views.AuthFragment">
 
-    <!-- Заголовок -->
     <TextView
         android:id="@+id/text_view_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Авторизация"
+        android:text="Регистрация"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="?android:attr/textColorPrimary"
@@ -21,7 +20,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="0.2" />
 
-    <!-- Поле ввода логина -->
     <EditText
         android:id="@+id/edit_text_login"
         android:layout_width="0dp"
@@ -38,7 +36,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintWidth_percent="0.8" />
 
-    <!-- Поле ввода пароля -->
     <EditText
         android:id="@+id/edit_text_password"
         android:layout_width="0dp"
@@ -62,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:padding="12dp"
-        android:text="@string/sign_in"
+        android:text="Зарегистрироваться"
         android:textColor="@android:color/white"
         app:layout_constraintTop_toBottomOf="@id/edit_text_password"
         app:layout_constraintStart_toStartOf="parent"

@@ -35,6 +35,12 @@ class MainActivity : AppCompatActivity() {
                 R.id.authFragment -> {
                     bottomNavigationView.visibility = View.GONE
                 }
+                R.id.welcomeFragment -> {
+                    bottomNavigationView.visibility = View.GONE
+                }
+                R.id.registrationFragment -> {
+                    bottomNavigationView.visibility = View.GONE
+                }
                 else -> {
                     bottomNavigationView.visibility = View.VISIBLE
                 }
