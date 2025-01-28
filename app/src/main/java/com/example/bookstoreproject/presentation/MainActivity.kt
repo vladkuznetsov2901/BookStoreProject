@@ -1,6 +1,7 @@
 package com.example.bookstoreproject.presentation
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -29,14 +30,25 @@ class MainActivity : AppCompatActivity() {
 
         NavigationUI.setupWithNavController(bottomNavigationView, navController)
 
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.authFragment -> {
+                    bottomNavigationView.visibility = View.GONE
+                }
+                else -> {
+                    bottomNavigationView.visibility = View.VISIBLE
+                }
+            }
+        }
+
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> {
-                    navController.navigate(R.id.nav_home)
+                    navController.navigate(R.id.homeFragment)
                     true
                 }
                 R.id.nav_cart -> {
-                    navController.navigate(R.id.nav_cart)
+                    navController.navigate(R.id.cartFragment)
                     true
                 }
                 else -> false

@@ -22,4 +22,12 @@ class ProductRepositoryImpl @Inject constructor(private val productDao: ProductD
         productDao.insert(product)
     }
 
+    override suspend fun getProductByID(id: Int): Product? {
+        return productDao.getCartItemById(id)
+    }
+
+    override suspend fun removeProduct(product: Product) {
+        productDao.removeFromCart(product)
+    }
+
 }

@@ -8,5 +8,7 @@ interface ProductRepository {
     suspend fun getAllProducts(): List<Product>
     suspend fun getAllProductsFromAPI(): Call<List<Book>>
     suspend fun addProduct(product: Product)
+    suspend fun getProductByID(id: Int): Product?
+    suspend fun removeProduct(product: Product)
 
 }

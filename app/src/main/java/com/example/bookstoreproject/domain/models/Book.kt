@@ -8,5 +8,6 @@ data class Book(
     val id_edition: Int,
     val id_author: Int,
     val year: Int,
-    val imagepath: String
+    val imagepath: String,
+    var isInCart: Boolean = false
 )
